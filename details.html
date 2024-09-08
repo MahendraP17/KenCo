@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header with Company Info -->
+    <header>
+        <div class="company-info">
+            <img src="logo.png" alt="Company Logo" class="logo">
+            <div class="contact">
+                <p>Phone: 123-456-7890</p>
+                <p>Email: info@homedesigner.com</p>
+                <p><a href="#">Facebook</a> | <a href="#">YouTube</a></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Details Section -->
+    <section class="home-details">
+        <h2 id="home-title">Home Details</h2>
+        <video id="home-video" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="photos-grid" id="photos-grid">
+            <!-- Photos will be inserted here dynamically -->
+        </div>
+
+        <div class="price-details" id="price-details">
+            <!-- Price details will be inserted here dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer with Company Details -->
+    <footer>
+        <p>Company Address: 1234 Designer Street, City, Country</p>
+        <p>Phone: 123-456-7890 | Email: info@homedesigner.com</p>
+        <p><a href="#">Facebook</a> | <a href="#">YouTube</a></p>
+    </footer>
+
+    <!-- JavaScript to load dynamic content -->
+    <script>
+        // Get the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const homeId = urlParams.get('home');
+
+        // Sample data for different homes (you can add more homes as needed)
+        const homeData = {
+            home1: {
+                title: "Modern Home",
+                video: "Video.mp4",
+                photos: ["home1.jpg", "home1.jpg", "home1.jpg"],
+                price: "$300,000"
+            },
+            home2: {
+                title: "Traditional Home",
+                video: "home2_video.mp4",
+                photos: ["home2_photo1.jpg", "home2_photo2.jpg", "home2_photo3.jpg"],
+                price: "$250,000"
+            },
+            // Add more homes here...
+        };
+
+        // Function to load the data based on homeId
+        function loadHomeDetails() {
+            const home = homeData[homeId];
+
+            if (home) {
+                document.getElementById('home-title').textContent = home.title;
+                document.getElementById('home-video').children[0].src = home.video;
+                
+                const photosGrid = document.getElementById('photos-grid');
+                photosGrid.innerHTML = '';
+                home.photos.forEach(photo => {
+                    const img = document.createElement('img');
+                    img.src = photo;
+                    photosGrid.appendChild(img);
+                });
+
+                document.getElementById('price-details').innerHTML = `<h3>Full Price: ${home.price}</h3>`;
+            } else {
+                document.getElementById('home-title').textContent = 'Home Not Found';
+            }
+        }
+
+        // Load the home details when the page loads
+        loadHomeDetails();
+    </script>
+
+</body>
+</html>

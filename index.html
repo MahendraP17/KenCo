@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Designer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header with Company Info -->
+
+    <header>
+        <div class="company-info">
+            <img src="logo.png" alt="Company Logo" class="logo">
+            <div class="company-name">
+                <h1>KENCON Co.</h1>
+            </div>
+            <div class="contact">
+                <p>Phone: 98834 03299</p>
+                <!-- Copy and Call Buttons -->
+                <button onclick="copyPhoneNumber()">Copy</button>
+                <button onclick="callPhoneNumber()">Call</button>
+               <!-- <p>Email: krishnendughosh115@gmail.com</p> -->
+                <p><a href="https://www.facebook.com/profile.php?id=61556307492347&mibextid=ZbWKwL">Facebook</a> | <a href="#">YouTube</a></p>
+            </div>
+        </div>
+    </header>
+
+     <!-- Promotional Line with Blinking Effect -->
+     <section class="promo-banner">
+        <p class="blinking">Limited Time Offer: Get Sand for just $99/ton!</p>
+    </section>
+
+    <!-- Home Samples -->
+    <section class="home-samples">
+        <h2>আমাদের বাড়ির ডিজাইন</h2>
+        <div class="samples-grid">
+            <!-- Loop through 10 samples -->
+            <div class="sample">
+                <img src="home1.jpg" alt="Home 1">
+                <button onclick="viewMore('home1')">View More</button>
+            </div>
+            <!-- Repeat for other homes -->
+            <div class="sample">
+                <img src="home3.jpg" alt="Home 2">
+                <button onclick="viewMore('home2')">View More</button>
+            </div>
+            <div class="sample">
+                <img src="home4.jpg" alt="Home 2">
+                <button onclick="viewMore('home2')">View More</button>
+            </div>
+            <div class="sample">
+                <img src="home2.jpg" alt="Home 2">
+                <button onclick="viewMore('home2')">View More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="materials">
+        <h2>Materials & Pricing</h2>
+
+        <div class="sand-prices">
+            <h3>Sand Types</h3>
+            <div class="material-item">
+                <p>Fine Sand: $50/ton</p>
+            </div>
+            <div class="material-item">
+                <p>Coarse Sand: $40/ton</p>
+            </div>
+            <div class="material-item">
+                <p>River Sand: $60/ton</p>
+            </div>
+        </div>
+
+        <div class="brick-prices">
+            <h3>Brick Types</h3>
+            <div class="material-item">
+                <p>Clay Brick: $0.5 per piece</p>
+            </div>
+            <div class="material-item">
+                <p>Concrete Brick: $0.4 per piece</p>
+            </div>
+        </div>
+
+        <div class="cement-prices">
+            <h3>Cement Types</h3>
+            <div class="material-item">
+                <p>Brand A: $20/bag</p>
+            </div>
+            <div class="material-item">
+                <p>Brand B: $18/bag</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Company Details -->
+    <footer>
+        <p>Company Address: 1234 Designer Street, City, Country</p>
+        <p>Phone: 123-456-7890 | Email: info@homedesigner.com</p>
+        <p><a href="#">Facebook</a> | <a href="#">YouTube</a></p>
+    </footer>
+
+    <!-- JavaScript to handle View More button -->
+    <script src="script.js"></script>
+</body>
+</html>

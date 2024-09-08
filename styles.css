@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo {
+    width: 100px; /* Adjust the width */
+    height: auto; /* Keeps the aspect ratio */
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+header .company-info, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.samples-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default for larger screens */
+    gap: 20px;
+    margin: 20px;
+}
+
+.samples-grid .sample {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.sample img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.materials {
+    padding: 20px;
+}
+
+.material-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.material-item p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .samples-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 samples per row for smaller screens */
+    }
+
+    header .company-info {
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.photos-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.company-name h1 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+}
+/* Promotional Banner */
+.promo-banner {
+    background-color: #f00;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.blinking {
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { color: red; }
+    50% { color: blue; }
+}
